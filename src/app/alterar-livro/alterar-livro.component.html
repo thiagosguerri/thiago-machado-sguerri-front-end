@@ -1,0 +1,31 @@
+<mat-toolbar color="primary">
+
+  <span>Biblioteca Digital</span>
+  <ul>
+    <a class="mat-button" routerlinkactive="docs-navbar-header-item-selected" routerLink="/home">Home</a>
+  </ul>
+  <ul>
+    <a class="mat-button" routerlinkactive="docs-navbar-header-item-selected" routerLink="/listar-livros">Livros</a>
+  </ul>
+  <ul>
+    <a class="mat-button" routerlinkactive="docs-navbar-header-item-selected" routerLink="/listar-autores" >Autores</a>
+  </ul>
+</mat-toolbar>
+
+<form [formGroup]="editarLivroForm">
+
+ <div class="titulo form-group">
+    <label for="titulo">Título:</label>
+    <input class="form-control" formControlName="titulo" type="text" id="titulo"/>
+
+  <div class="anoLancamento form-group">
+    <label for="anoLancamento">Ano Lançamento:</label>
+    <input class="form-control" formControlName="anoLancamento" type="text" id="anoLancamento"/>
+  </div>
+ </div>
+
+ <div class="mt-4">
+  <button type="button" (click)="editaLivroPorId()" class="btn btn-dark px-5">Salvar Alterações</button>
+ </div>
+
+  </form>

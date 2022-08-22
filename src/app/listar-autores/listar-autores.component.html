@@ -1,0 +1,46 @@
+<body>
+  <mat-toolbar color="primary">
+
+    <span>Biblioteca Digital</span>
+    <ul>
+      <a class="mat-button" routerlinkactive="docs-navbar-header-item-selected" routerLink="/home">Home</a>
+    </ul>
+    <ul>
+      <a class="mat-button" routerlinkactive="docs-navbar-header-item-selected" routerLink="/listar-livros">Livros</a>
+    </ul>
+    <ul>
+      <a class="mat-button" routerlinkactive="docs-navbar-header-item-selected" routerLink="/listar-autores" >Autores</a>
+    </ul>
+  </mat-toolbar>
+
+  <div>
+    <a class="btn btn-dark" routerLink="/cadastrar-autor"><i class="bi bi-journal-plus"></i>Cadastrar</a>
+  </div>
+       <div *ngIf="autores.length > 0 && erroAoListarAutor == '' ">
+     <table>
+        <tr>
+            <th>Nome</th>
+            <th>Ações</th>
+        </tr>
+        <tr *ngFor="let autores of autores" >
+            <td>
+                {{autores.nome}}
+            </td>
+            <td>
+              <a class="btn btn-dark" routerLink="/alterar-autor">Editar</a>
+            </td>
+            <td></td>
+         </tr>
+     </table>
+</div>
+
+    <div *ngIf="autores.length <= 0 && erro == ''">
+      <app-mensagem *ngIf="autores.length <= 0" mensagem="Nenhum Autor foi encontrado."></app-mensagem>
+    </div>
+
+    <div *ngIf="erro != ''">
+        {{erro}}
+    </div>
+
+
+  </body>

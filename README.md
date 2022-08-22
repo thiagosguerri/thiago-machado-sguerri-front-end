@@ -5,10 +5,10 @@ Biblioteca
 Teste de avaliação2 - Projeto Biblioteca front-end, realizado por Thiago Machado Sguerri.
 
 Para ter acesso ao projeto deverá ter instalado em sua máquina as seguintes tecnologias e ferramentas.
+
 - Eclipse ou Spring Tool Suite 4 (Utilizado o Java 8)
 - Framework Angular, de preferência da versão 12 adiante. (Versão 14 utilizada no projeto.)
 - IDE ou editores de texto para desenvolvimento. (Utilizado o Visual Studio Code)
-
 
 Para executar o projeto, deverá realizar a instalação da API REST do endereço https://github.com/aceleragep/biblioteca.git
 

@@ -1,0 +1,43 @@
+<mat-toolbar color="primary">
+
+  <span>Biblioteca Digital</span>
+  <ul>
+    <a class="mat-button" routerlinkactive="docs-navbar-header-item-selected" routerLink="/home">Home</a>
+  </ul>
+  <ul>
+    <a class="mat-button" routerlinkactive="docs-navbar-header-item-selected" routerLink="/listar-livros">Livros</a>
+  </ul>
+  <ul>
+    <a class="mat-button" routerlinkactive="docs-navbar-header-item-selected" routerLink="/listar-autores" >Autores</a>
+  </ul>
+</mat-toolbar>
+
+<div>
+  <h3>Cadastrar Autor</h3>
+</div>
+<div class="">
+
+  <form [formGroup]="cadastroForm" >
+    <div class="">
+      <label  class="col-sm-1 col-form-label">Nome</label>
+      <div class="col-sm-4">
+        <input type="nome" class="form-control" id="nome"  formControlName="nome">
+      </div>
+    </div>
+
+    <div class="">
+      <label  class="col-sm-1 col-form-label">Biografia</label>
+      <div class="col-sm-4">
+        <input type="biografia" class="form-control" id="biografia"  formControlName="biografia">
+      </div>
+    </div>
+
+
+    <div class="mt-4">
+      <button type="button" (click)="cadastrar()"class="btn btn-dark px-5"> Salvar </button>
+      <button type="button" (click)="cancelar()" class="btn btn-dark "> Cancelar </button>
+      <div class="alert alert-{{type}}" role="alert" >{{ alertText }}</div>
+    </div>
+
+    </form>
+</div>
