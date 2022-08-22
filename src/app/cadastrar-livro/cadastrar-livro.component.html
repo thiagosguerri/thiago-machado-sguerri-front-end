@@ -1,0 +1,51 @@
+
+ <mat-toolbar color="primary">
+
+  <span>Biblioteca Digital</span>
+  <ul>
+    <a class="mat-button" routerlinkactive="docs-navbar-header-item-selected" routerLink="/home">Home</a>
+  </ul>
+  <ul>
+    <a class="mat-button" routerlinkactive="docs-navbar-header-item-selected" routerLink="/listar-livros">Livros</a>
+  </ul>
+  <ul>
+    <a class="mat-button" routerlinkactive="docs-navbar-header-item-selected" routerLink="/listar-autores" >Autores</a>
+  </ul>
+</mat-toolbar>
+
+<div>
+  <h3>Cadastrar Livro</h3>
+</div>
+<div class="">
+
+  <form [formGroup]="cadastroForm">
+    <div class="">
+      <label  class="col-sm-1 col-form-label">Titulo</label>
+      <div class="col-sm-4">
+        <input type="titulo" class="form-control" id="titulo"  formControlName="titulo">
+      </div>
+    </div>
+
+    <div class="">
+      <label  class="col-sm-1 col-form-label">Ano lançamento</label>
+      <div class="col-sm-4">
+        <input type="anoLancamento" class="form-control" id="anoLancamento"  formControlName="anoLancamento">
+      </div>
+    </div>
+
+    <div class="autoresIds form-group">
+      <label>Quem é o autor do livro?</label>
+      <div class="col-sm-4">
+      <select class="form-control" formControlName="autoresIds" name="autoresIds">
+        <option value="" selected disabled>Selecione um Autor</option>
+        <option *ngFor="let autor of autores" value={{autor.id}}>{{autor.nome}}</option>
+      </select>
+      </div>
+    </div>
+
+    <div class="mt-4">
+      <button type="button" (click)="cadastrar()"class="btn btn-dark px-5"> Salvar </button>
+    <button type="button" (click)="cancelar()" class="btn btn-dark px-5"> Cancelar </button>
+        </div>
+    </form>
+</div>

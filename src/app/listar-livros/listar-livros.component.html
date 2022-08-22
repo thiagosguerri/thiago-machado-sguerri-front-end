@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="listar-livros.component.scss">
+</head>
+
+<body>
+
+  <mat-toolbar color="primary">
+
+    <span>Biblioteca Digital</span>
+    <ul>
+      <a class="mat-button" routerlinkactive="docs-navbar-header-item-selected" routerLink="/home">Home</a>
+    </ul>
+    <ul>
+      <a class="mat-button" routerlinkactive="docs-navbar-header-item-selected" routerLink="/listar-livros">Livros</a>
+    </ul>
+    <ul>
+      <a class="mat-button" routerlinkactive="docs-navbar-header-item-selected" routerLink="/listar-autores" >Autores</a>
+    </ul>
+  </mat-toolbar>
+
+  <div>
+    <a class="btn btn-dark" routerLink="/cadastrar-livro">Cadastrar</a>
+  </div>
+       <div *ngIf="livros.length > 0 && erroAoListarLivro == '' ">
+     <table>
+        <tr>
+            <th>Título</th>
+            <th>Ações</th>
+        </tr>
+        <tr *ngFor="let livros of livros">
+            <td>
+                {{livros.titulo}}
+            </td>
+            <td></td>
+            <td>
+              <a class="btn btn-dark" routerLink="/alterar-livro">Editar</a>
+            </td>
+            <td></td>
+            <td>
+                <button class="btn btn-dark" (click)="remocaoLivro(livros)"> Remover </button>
+           </td>
+            <td></td>
+         </tr>
+     </table>
+</div>
+
+    <div *ngIf="livros.length <= 0 && erro == ''">
+      <app-mensagem *ngIf="livros.length <= 0" mensagem="Nenhum livro foi encontrado."></app-mensagem>
+    </div>
+
+    <div *ngIf="erro != '' ">
+        {{erro}}
+    </div>
+
+    </body>
+</html>
+

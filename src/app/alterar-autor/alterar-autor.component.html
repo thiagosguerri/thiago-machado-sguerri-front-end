@@ -1,0 +1,31 @@
+<mat-toolbar color="primary">
+
+  <span>Biblioteca Digital</span>
+  <ul>
+    <a class="mat-button" routerlinkactive="docs-navbar-header-item-selected" routerLink="/home">Home</a>
+  </ul>
+  <ul>
+    <a class="mat-button" routerlinkactive="docs-navbar-header-item-selected" routerLink="/listar-livros">Livros</a>
+  </ul>
+  <ul>
+    <a class="mat-button" routerlinkactive="docs-navbar-header-item-selected" routerLink="/listar-autores" >Autores</a>
+  </ul>
+</mat-toolbar>
+
+<form >
+
+ <div class="nome form-group">
+    <label for="nome">Nome:</label>
+    <input class="form-control" formControlName="nome" type="text" id="nome"/>
+
+  <div class="biografia form-group">
+    <label for="biografia">Biografia:</label>
+    <input class="form-control" formControlName="biografia" type="text" id="biografia"/>
+  </div>
+ </div>
+
+ <div class="mt-4">
+  <button type="button"  class="btn btn-dark px-5">Salvar Alterações</button>
+ </div>
+
+  </form>
